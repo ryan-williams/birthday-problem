@@ -9,6 +9,6 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
     - name: nbconvert .ipynb's
-      uses: runsascoded/nbconvert@v1.2
+      uses: runsascoded/nbconvert-action@main
       with:
         args: -f -x -a
