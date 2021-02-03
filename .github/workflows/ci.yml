@@ -1,10 +1,16 @@
-steps:
-- name: Check out repository
-  uses: actions/checkout@v2
-  with:
-    ref: ${{ github.head_ref }}
-
-- name: nbconvert .ipynb's
-  uses: runsascoded/nbconvert@v1.2
-  with:
-    args: -f -x
+name: Refresh .md's
+on:
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    - name: nbconvert .ipynb's
+      uses: runsascoded/nbconvert@v1.2
+      with:
+        args: -f -x
