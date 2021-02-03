@@ -11,4 +11,4 @@ jobs:
     - name: nbconvert .ipynb's
       uses: runsascoded/nbconvert-action@main
       with:
-        args: -f -x -a
+        args: -f -a
